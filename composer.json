@@ -1,0 +1,26 @@
+{
+  "name": "baidu-chelianwang/dm-kit",
+  "type": "library" ,
+  "description": "DM-Kit for php.",
+  "keywords": ["unit","dm-kit"],
+  "require": {
+    "php": ">=7.0",
+    "symfony/yaml": "2.8.45",
+    "monolog/monolog": "1.23.0",
+    "guzzlehttp/guzzle": "6.3.3"
+  },
+  "require-dev": {
+    "phpunit/phpunit": ">=4.8"
+  },
+  "license": "Apache-2.0",
+  "authors": [
+    {
+      "name" : "xiaomeng",
+      "email": "xiaomeng01@baidu.com",
+      "role":"Developer"
+    }
+  ],
+  "autoload": {
+    "psr-4": { "Baidu\\Iov\\DmKit\\": "src/" }
+  }
+}

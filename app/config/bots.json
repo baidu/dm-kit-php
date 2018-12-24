@@ -1,0 +1,14 @@
+[
+  {
+    "bot_id": "your_bot_id",
+    "conf_path": "app/config/cellular_data.json",
+    "access_token": "your_access_token",
+    "session_id": ""
+  },
+  {
+    "bot_id": "your_bot_id",
+    "conf_path": "app/config/quota_adjust.json",
+    "access_token": "your_access_token",
+    "session_id": ""
+  }
+]

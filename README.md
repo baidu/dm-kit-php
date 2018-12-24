@@ -2,8 +2,7 @@
 
 ## 简介
 
-参考https://github.com/baidu/unit-dmkit
-完全兼容c++版本的policies配置文件，但是不能反向兼容。
+参考c++版本的[unit-dmkit](https://github.com/baidu/unit-dmkit)，完全兼容c++版本的policies配置文件，但是不能反向兼容。
 
 在任务型对话系统（Task-Oriented Dialogue System）中，一般包括了以下几个模块：
 
@@ -43,7 +42,7 @@ try{
 
 ### 测试
 1. 运行composer update，安装依赖库
-2. 在百度unit平台上创建bot，具体参考https://github.com/baidu/unit-dmkit/blob/master/docs/demo_bots.md
+2. 在百度unit平台上创建bot，具体参考[UNIT配置指南](docs/demo_skills.md)
 3. 讲bot_id和access_token填入app/config/bots.json文件中，cellular_data为流量查询bot，quota_adjust为额度调整bot，access_token获取参考http://ai.baidu.com/docs#/Auth/top
 4. 运行php src/Tests/speak.php，查看bot效果
 

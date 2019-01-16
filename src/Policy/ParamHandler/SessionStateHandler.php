@@ -23,16 +23,6 @@ class SessionStateHandler extends AbstractHandler
      */
     public function handle()
     {
-        $slots = $this->policy->policyManager->getQuResult()->getSlots();
-        $s = explode(',', $this->value);
-        /**
-         * @var $slot Slot
-         */
-        $slot = $slots[$s[0]][$s[1] ?? 0];
-        if (!$slot) {
-            return null;
-        } else {
-            return $slot->getNormalizedValue();
-        }
+        return $this->policy->policyManager->getSession()->getSessionObject()->getState();
     }
 }

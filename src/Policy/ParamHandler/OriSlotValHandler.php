@@ -16,6 +16,8 @@
 namespace Baidu\Iov\DmKit\Policy\ParamHandler;
 
 
+use Baidu\Iov\DmKit\Dialog\Slot;
+
 class OriSlotValHandler extends AbstractHandler
 {
     /**
@@ -23,6 +25,16 @@ class OriSlotValHandler extends AbstractHandler
      */
     public function handle()
     {
-        return $this->policy->policyManager->getSession()->getSessionObject()->getState();
+        $slots = $this->policy->policyManager->getQuResult()->getSlots();
+        $s = explode(',', $this->value);
+        /**
+         * @var $slot Slot
+         */
+        $slot = $slots[$s[0]][$s[1] ?? 0];
+        if (!$slot) {
+            return null;
+        } else {
+            return $slot->getValue();
+        }
     }
 }

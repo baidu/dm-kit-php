@@ -16,6 +16,8 @@
 namespace Baidu\Iov\DmKit\Policy\ParamHandler;
 
 
+use Baidu\Iov\DmKit\Dialog\Slot;
+
 class SlotValHandler extends AbstractHandler
 {
     /**

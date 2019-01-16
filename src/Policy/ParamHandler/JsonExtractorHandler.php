@@ -28,7 +28,6 @@ class JsonExtractorHandler extends AbstractHandler
     {
         $json = explode(',', $this->value);
         $jsonObj = $this->policy->replaceParams($json[0]);
-        var_dump($jsonObj);
         if(!is_array($jsonObj)) {
             throw new DmException("$json[0] is not a json object.");
         }

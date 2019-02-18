@@ -82,6 +82,9 @@ class UnitBotParser implements ParserInterface
             $quResult->addSlot($item);
         }
         $quResult->setSessionId($botSession['session_id']);
+        if($say = $result['response']['action_list'][0]['say']) {
+            $quResult->setSay($say);
+        }
         $quResultMap[$botId] = $quResult;
         $this->quResultMap = $quResultMap;
         return $quResultMap;

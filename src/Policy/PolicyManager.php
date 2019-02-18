@@ -161,14 +161,16 @@ class PolicyManager
      * return array result or false
      * if returns false, it means that the query is not recalled
      *
-     * @return bool|array
+     * @param $unitSay
+     * @return array|bool
      */
-    public function output()
+    public function output(&$unitSay = null)
     {
         //no nlu result
         if (!$this->quResult) {
             return false;
         }
+        $unitSay = $this->quResult->getSay();
         $this->session->read();
         $allSlots = $this->session->getSessionObject()->getSlots();
         foreach ($this->quResult->getSlots() as $key => $slot) {

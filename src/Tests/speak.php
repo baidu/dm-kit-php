@@ -60,9 +60,16 @@ while ($word = trim(fgets($stdin))) {
             exit(-1);
         }
         //dm-kit output
-        $output = $policyManager->setRequestParams(['cuid' => 'test_user'])->setQuResults($ret)->output();
+        $output = $policyManager->setRequestParams(['cuid' => 'test_user'])->setQuResults($ret)->output($unitSay);
+
+        if(false === $output) {
+            //当unit未召回意图时，返回兜底话术
+            echo $unitSay . "\n";
+        }else{
+            //返回配置的内容，可进行后续处理
+            echo json_encode($output['results'], JSON_UNESCAPED_UNICODE) . "\n";
+        }
         $botSession = $ret['result']['bot_session'];
-        echo json_encode($output['results'], JSON_UNESCAPED_UNICODE) . "\n";
     } catch (\Exception $e) {
         echo $e->getMessage() . "\n";
         exit(-1);

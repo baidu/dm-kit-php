@@ -26,6 +26,7 @@ class QuResult
     private $intent;
     private $slots;
     private $changedSlots;
+    private $say;
     private $botId;
     private $sessionId;
 
@@ -121,6 +122,24 @@ class QuResult
     public function setSessionId($sessionId)
     {
         $this->sessionId = $sessionId;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSay()
+    {
+        return $this->say;
+    }
+
+    /**
+     * @param mixed $say
+     * @return QuResult
+     */
+    public function setSay($say)
+    {
+        $this->say = $say;
         return $this;
     }
 
